@@ -1,3 +1,4 @@
 *.dia~
 *.dia.autosave
 *.class
+*DS_Store
