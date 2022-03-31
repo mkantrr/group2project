@@ -1,4 +1,4 @@
-package src;
+package prototype.src;
 //Each tile on the board will be its own "Square" object. Has variables to keep track of which squares are mines,
 //which squares have flags, which squares have already been clicked, etc.
 
