@@ -9,7 +9,6 @@ import java.util.Random;
 //Game class. Creates a game object that is of the size the user inputs.
 
 public class Game {
-    public Game(){}
 
     public static void startGame(int numRows, int numCols, int numMines){
         ImageIcon flag = new ImageIcon("icons/flag.png");

@@ -8,13 +8,14 @@ package prototype.src;
 public class Square {
     private int xindex, yindex;
     private boolean isAMine = false, isAFlag = false, clicked = false;
-
-    public Square(){
-    }
+    private int nearbyMines;
+    //Creates corresponding square and stores its X and Y indices
     public Square(int xindex, int yindex){
         this.xindex = xindex;
         this.yindex = yindex;
     }
+
+    //All the following methods set or return their corresponding variable
     public void setIsAMine(boolean b){
         this.isAMine = b;
     }
@@ -44,5 +45,12 @@ public class Square {
     }
     public boolean getClicked(){
         return this.clicked;
+    }
+    public void setNearbyMines(){
+
+    }
+
+    public int getNearbyMines() {
+        return nearbyMines;
     }
 }
