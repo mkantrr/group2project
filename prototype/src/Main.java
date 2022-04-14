@@ -8,7 +8,7 @@ import java.util.Random;
 //Main class. Responsible for prompting user for board size and amount of mines.
 
 public class Main {
-    private static int numRows, numCols, numMines;
+    protected static int numRows, numCols, numMines;
 
     // This class prompts the user for input for height, width, and number of mines to be in the game and passes them to the Game class if they allow for a valid game
     public static void main(String[] args){

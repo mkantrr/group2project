@@ -10,13 +10,13 @@ import java.util.Random;
 
 public class Game {
 
+    static Square[] squareArray;
     public static void startGame(int numRows, int numCols, int numMines){
-        ImageIcon flag = new ImageIcon("icons/flag.png");
-        ImageIcon mine = new ImageIcon("icons/mine.png");
         JFrame gameFrame = new JFrame("Minesweeper");
         gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gameFrame.getContentPane().setLayout(new GridLayout(numRows, numCols));
-        Square[] squareArray = new Square[numRows*numCols];
+        squareArray = new Square[numRows*numCols];
+        Icons.fillNumIcons();
         int xCount = 0, yCount = 0;
         for(int i = 0; i < squareArray.length; i++)//Populate the one dimensional array with square objects
         {
@@ -45,7 +45,7 @@ public class Game {
                                 + squareArray[finalI].getYindex());
                         squareArray[finalI].setIsAFlag(true);
                         if(!squareArray[finalI].getClicked())
-                            button.setIcon(flag);
+                            button.setIcon(Icons.flag);
                     }
                     else{//left click opens the square
                         if(!squareArray[finalI].getIsAFlag()){
@@ -53,10 +53,15 @@ public class Game {
                             System.out.println("You left-clicked the square at: " + squareArray[finalI].getXindex() + ", "
                                     + squareArray[finalI].getYindex());
                             if(squareArray[finalI].getIsAMine()) {//if the square is a mine, game over
-                                button.setIcon(mine);
+                                button.setIcon(Icons.mine);
                                 JOptionPane.showConfirmDialog(null, "YOU LOSE!",
                                         "Game Over", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
                                 System.exit(0);
+                            }
+                            else{//if the square is not a mine
+                                squareArray[finalI].findNearbyMines(squareArray[finalI].getXindex(),
+                                        squareArray[finalI].getYindex());
+                                button.setIcon(Icons.numIcons[squareArray[finalI].getNearbyMines()]);
                             }
                         }
                     }
@@ -66,5 +71,12 @@ public class Game {
         }
         gameFrame.setSize(800, 600);
         gameFrame.setVisible(true);
+    }
+
+    public static boolean lookForMineAt(int x, int y){
+        for(int i = 0; i < squareArray.length; i++)
+            if(squareArray[i].getXindex() == x && squareArray[i].getYindex() == y)
+                return squareArray[i].getIsAMine();
+        return false;
     }
 }
