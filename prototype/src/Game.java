@@ -62,6 +62,10 @@ public class Game {
                                 squareArray[finalI].findNearbyMines(squareArray[finalI].getXindex(),
                                         squareArray[finalI].getYindex());
                                 button.setIcon(Icons.numIcons[squareArray[finalI].getNearbyMines()]);
+                                if(gameWon(squareArray)){
+                                    JOptionPane.showConfirmDialog(null, "YOU WIN!",
+                                            "Game Over", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
+                                }
                             }
                         }
                     }
@@ -78,5 +82,15 @@ public class Game {
             if(squareArray[i].getXindex() == x && squareArray[i].getYindex() == y)
                 return squareArray[i].getIsAMine();
         return false;
+    }
+
+    public static boolean gameWon(Square[] squareArray){
+        boolean gameWon = true;
+        for(Square square : squareArray){
+            if(!square.getClicked() && !square.getIsAMine()){
+                gameWon = false;
+            }
+        }
+        return gameWon;
     }
 }
