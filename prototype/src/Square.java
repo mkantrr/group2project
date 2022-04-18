@@ -89,6 +89,6 @@ public class Square {
             }
             i++;
         }
-        System.out.println("This square has " + nearbyMines + " nearby mines.");
+        System.out.println("This square has " + nearbyMines + " nearby mine(s).");
     }
 }
