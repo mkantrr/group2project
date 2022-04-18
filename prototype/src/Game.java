@@ -6,11 +6,21 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Random;
 
-//Game class. Creates a game object that is of the size the user inputs.
+/**
+ *
+ * Game class. Creates a game object that is of the size the user inputs.
+ */
 
 public class Game {
 
     static Square[] squareArray;
+
+    /**
+     * This method generates the board with provided dimensions and number of mines
+     * @param numRows The number of rows in the minefield
+     * @param numCols The number of columns in the minefield
+     * @param numMines The number of mines to be generated in the game
+     */
     public static void startGame(int numRows, int numCols, int numMines){
         JFrame gameFrame = new JFrame("Minesweeper");
         gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

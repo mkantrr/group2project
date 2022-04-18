@@ -5,7 +5,10 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
 
-//Main class. Responsible for prompting user for board size and amount of mines.
+/**
+ *
+ * Main class. Responsible for prompting user for board size and amount of mines.
+ */
 
 public class Main {
     protected static int numRows, numCols, numMines;

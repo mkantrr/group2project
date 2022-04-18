@@ -1,54 +1,105 @@
 package prototype.src;
-//Each tile on the board will be its own "Square" object. Has variables to keep track of which squares are mines,
-//which squares have flags, which squares have already been clicked, etc.
 
-//The squares are stored in a 1-dimensional array in Main, but each square is assigned a unique 2-dimensional
-//coordinate.
+/**
+ *Each tile on the board will be its own"Square"object.Has variables to keep track of which squares are mines,
+ *which squares have flags, which squares have already been clicked, etc.
+ *The squares are stored in a 1-dimensional array in Main, but each square is assigned a unique 2-dimensional
+ *coordinate.
+ *
+ */
 
 public class Square {
     private int xindex, yindex;
     private boolean isAMine = false, isAFlag = false, clicked = false;
     private int nearbyMines = 0;
-    //Creates corresponding square and stores its X and Y indices
+
+    /**
+     *
+     * @param xindex
+     * @param yindex
+     */
     public Square(int xindex, int yindex){
         this.xindex = xindex;
         this.yindex = yindex;
     }
 
-    //All the following methods set or return their corresponding variable
+    /**
+     *
+     * @param b
+     */
     public void setIsAMine(boolean b){
         this.isAMine = b;
     }
+
+    /**
+     *
+     * @return
+     */
     public boolean getIsAMine(){
         return this.isAMine;
     }
-    public void setXindex(int i){
-        this.xindex = i;
-    }
+
+    /**
+     *
+     * @return
+     */
     public int getXindex(){
         return this.xindex;
     }
-    public void setYindex(int i){
-        this.yindex = i;
-    }
+
+    /**
+     *
+     * @return
+     */
     public int getYindex(){
         return this.yindex;
     }
+
+    /**
+     *
+     * @param b
+     */
     public void setIsAFlag(boolean b){
         this.isAFlag = b;
     }
+
+    /**
+     *
+     * @return
+     */
     public boolean getIsAFlag(){
         return this.isAFlag;
     }
+
+    /**
+     *
+     * @param b
+     */
     public void setClicked(boolean b){
         this.clicked = b;
     }
+
+    /**
+     *
+     * @return
+     */
     public boolean getClicked(){
         return this.clicked;
     }
+
+    /**
+     *
+     * @return
+     */
     public int getNearbyMines() {
         return nearbyMines;
     }
+
+    /**
+     *
+     * @param x The x index of the square
+     * @param y The y index of the square
+     */
     public void findNearbyMines(int x, int y){
         int maxX = Main.numCols - 1;
         int maxY = Main.numCols - 1;
