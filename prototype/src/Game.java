@@ -55,9 +55,17 @@ public class Game {
                     if(SwingUtilities.isRightMouseButton(e)){//right click sets a flag
                         System.out.println("You right-clicked the square at: " + squareArray[finalI].getXindex() + ", "
                                 + squareArray[finalI].getYindex());
-                        squareArray[finalI].setIsAFlag(true);
-                        if(!squareArray[finalI].getClicked())
+                        if(squareArray[finalI].getIsAFlag()){
+                            squareArray[finalI].setIsAFlag(false);
+                        } else {
+                            squareArray[finalI].setIsAFlag(true);
+                        }
+                        if(!squareArray[finalI].getClicked() && squareArray[finalI].getIsAFlag()){
                             button.setIcon(Icons.flag);
+                        } else {
+                            button.setIcon(null);
+                        }
+
                     }
                     else{//left click opens the square
                         if(!squareArray[finalI].getIsAFlag()){
