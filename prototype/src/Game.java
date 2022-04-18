@@ -65,6 +65,7 @@ public class Game {
                                 if(gameWon(squareArray)){
                                     JOptionPane.showConfirmDialog(null, "YOU WIN!",
                                             "Game Over", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
+                                    System.exit(0);
                                 }
                             }
                         }
