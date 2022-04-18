@@ -6,14 +6,18 @@ import java.awt.event.*;
 import java.util.Random;
 
 /**
- *
- * Main class. Responsible for prompting user for board size and amount of mines.
+ * @author Zack Burnley, Matt Kanter, Zack Cherry
+ * @version 1.0
+ * This class prompts the user for the inputs responsible for generating the parameters of the board and passes them to the Game class instance
  */
 
 public class Main {
     protected static int numRows, numCols, numMines;
 
-    // This class prompts the user for input for height, width, and number of mines to be in the game and passes them to the Game class if they allow for a valid game
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args){
         JFrame promptFrame = new JFrame("Minesweeper");
         promptFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

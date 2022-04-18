@@ -1,10 +1,12 @@
 package prototype.src;
 
 /**
- *Each tile on the board will be its own"Square"object.Has variables to keep track of which squares are mines,
- *which squares have flags, which squares have already been clicked, etc.
- *The squares are stored in a 1-dimensional array in Main, but each square is assigned a unique 2-dimensional
- *coordinate.
+ * @author Zack Burnley, Matt Kanter, Zack Cherry
+ * @version 1.0
+ * Each tile on the board will be its own"Square"object.Has variables to keep track of which squares are mines,
+ * which squares have flags, which squares have already been clicked, etc.
+ * The squares are stored in a 1-dimensional array in Main, but each square is assigned a unique 2-dimensional
+ * coordinate.
  *
  */
 

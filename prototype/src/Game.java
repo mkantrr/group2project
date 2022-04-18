@@ -7,8 +7,10 @@ import java.awt.event.MouseEvent;
 import java.util.Random;
 
 /**
- *
+ * @author Zack Burnley, Matt Kanter, Zack Cherry
+ * @version 1.0
  * Game class. Creates a game object that is of the size the user inputs.
+ * Stores all the squares on the board in the squareArray array
  */
 
 public class Game {
@@ -72,7 +74,7 @@ public class Game {
                                 squareArray[finalI].findNearbyMines(squareArray[finalI].getXindex(),
                                         squareArray[finalI].getYindex());
                                 button.setIcon(Icons.numIcons[squareArray[finalI].getNearbyMines()]);
-                                if(gameWon(squareArray)){
+                                if(gameWon()){
                                     JOptionPane.showConfirmDialog(null, "YOU WIN!",
                                             "Game Over", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
                                     System.exit(0);
@@ -88,6 +90,12 @@ public class Game {
         gameFrame.setVisible(true);
     }
 
+    /**
+     * This method returns true if there is a mine at (x,y) and false otherwise
+     * @param x the X coordinate to look for a mine at
+     * @param y the Y coordinate to look for a mine at
+     * @return This returns if there is a mine at (x,y)
+     */
     public static boolean lookForMineAt(int x, int y){
         for(int i = 0; i < squareArray.length; i++)
             if(squareArray[i].getXindex() == x && squareArray[i].getYindex() == y)
@@ -95,7 +103,12 @@ public class Game {
         return false;
     }
 
-    public static boolean gameWon(Square[] squareArray){
+    /**
+     * This method checks if the game has been won by looking at each square and seeing if it is not a mine and has been revealed
+     * If each square without a mine ahs been revealed, the game is won and this method returns true
+     * @return This returns if the game has been won
+     */
+    public static boolean gameWon(){
         boolean gameWon = true;
         for(Square square : squareArray){
             if(!square.getClicked() && !square.getIsAMine()){
