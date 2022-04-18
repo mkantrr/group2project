@@ -11,7 +11,7 @@ import javax.swing.*;
 public class OneWayToggleButton extends JToggleButton.ToggleButtonModel {
     @Override
     /**
-     *
+     * If the button gets clicked on, this method sets the selected boolean equal to b
      */
     public void setSelected(boolean b){
         if(!isSelected())

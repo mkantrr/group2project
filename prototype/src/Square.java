@@ -16,9 +16,9 @@ public class Square {
     private int nearbyMines = 0;
 
     /**
-     *
-     * @param xindex
-     * @param yindex
+     * This is the constructor that creates a square located at index X and Y
+     * @param xindex the x index of the square
+     * @param yindex the y index of the square
      */
     public Square(int xindex, int yindex){
         this.xindex = xindex;
@@ -26,71 +26,71 @@ public class Square {
     }
 
     /**
-     *
-     * @param b
+     * Sets if this square contains a mine
+     * @param b This is if the square is a mine or not
      */
     public void setIsAMine(boolean b){
         this.isAMine = b;
     }
 
     /**
-     *
-     * @return
+     * Returns if rhe square contains a mine
+     * @return if the square is a mine
      */
     public boolean getIsAMine(){
         return this.isAMine;
     }
 
     /**
-     *
-     * @return
+     * Returns the x index of the square
+     * @return the x index
      */
     public int getXindex(){
         return this.xindex;
     }
 
     /**
-     *
-     * @return
+     * Returns the y index of the square
+     * @return the y index
      */
     public int getYindex(){
         return this.yindex;
     }
 
     /**
-     *
-     * @param b
+     * Sets if a flag has been placed on this square
+     * @param b if a flag was placed
      */
     public void setIsAFlag(boolean b){
         this.isAFlag = b;
     }
 
     /**
-     *
-     * @return
+     * Returns if a flag has already been placed on this square
+     * @return if the square has a flag
      */
     public boolean getIsAFlag(){
         return this.isAFlag;
     }
 
     /**
-     *
-     * @param b
+     * Sets if the square has been clicked
+     * @param b if the square has been clicked
      */
     public void setClicked(boolean b){
         this.clicked = b;
     }
 
     /**
-     *
-     * @return
+     * Returns if the square has been clicked on already
+     * @return if the square has been clicked on
      */
     public boolean getClicked(){
         return this.clicked;
     }
 
     /**
-     *
+     * Returns the number of mines in all surrounding squares
      * @return
      */
     public int getNearbyMines() {
@@ -98,7 +98,7 @@ public class Square {
     }
 
     /**
-     *
+     * Sets the number of mines in all surrounding squares by calling Game.lookForMineAt() on each square in a 3x3 grid with this square as the center
      * @param x The x index of the square
      * @param y The y index of the square
      */

@@ -15,7 +15,8 @@ public class Main {
     protected static int numRows, numCols, numMines;
 
     /**
-     *
+     * The main method generates the textfields which the user inpiuts the desired number of rows, columns, and mines which they want to be in the game
+     * This method then passes the values to the game class
      * @param args
      */
     public static void main(String[] args){
