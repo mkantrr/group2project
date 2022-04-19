@@ -2,6 +2,11 @@ package code;
 
 import java.util.Random;
 
+/**
+ * @author Matthew Kanter, Zack Burnley, Zack Cherry
+ * A class used to represent the minesweeper board as a whole. Also generates which squares
+ * on the board are mines.
+ */
 public class Board {
 
     private Square[][] grid;
@@ -10,6 +15,9 @@ public class Board {
     private int mineCount;
     private static Board theInstance; 
 
+    /**
+     *
+     */
     public Board(int dimensionX, int dimensionY, int mineCount) {
         this.dimensionX = dimensionX;
         this.dimensionY = dimensionY;
