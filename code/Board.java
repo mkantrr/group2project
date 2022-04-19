@@ -18,10 +18,8 @@ public class Board {
     }
 
     public static synchronized Board instance(int x, int y, int mines) {
-        if(theInstance == null) {
-            theInstance = new Board(x, y, mines);
-        }
-
+        theInstance = null;
+        theInstance = new Board(x, y, mines);
         return theInstance;
     }
 

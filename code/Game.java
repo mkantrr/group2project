@@ -122,6 +122,7 @@ public class Game implements ActionListener {
                 buttons[i][j].setBackground(Color.WHITE);
                 buttons[i][j].setPreferredSize(new Dimension(42, 42));
                 buttons[i][j].addActionListener(this);
+                buttons[i][j].setIcon(tileIcon);
                 final int ii = i;
                 final int jj = j;
                 buttons[i][j].addMouseListener(new MouseAdapter() {
@@ -197,7 +198,6 @@ public class Game implements ActionListener {
                         }
                     }
                 });
-                buttons[i][j].setIcon(tileIcon);
                 minespace.add(buttons[i][j]);
             }
         }
