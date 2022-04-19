@@ -1,16 +1,32 @@
 package code;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.BoxLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import java.util.Random;
 
+/**
+ * @author Matthew Kanter, Zack Burnley, Zack Cherry
+ * A class that handles the prompt window which acts as an entry point for taking in the 
+ * amount of rows, columns, and mines to create the minesweeper game.
+ */
 public class Main {
 
     protected static int numRows;
     protected static int numCols;
     protected static int numMines;
 
+    /**
+     * A method that creates a new prompt pane every time this method is called, allowing for new games
+     * to be created without having to terminate the program in its entirety beforehand. Once the Start Game!
+     * button is pressed, the game is generated and the prompt pane is disposed.
+     * @return void
+     */
     public static void newGame() {
         JFrame promptFrame = new JFrame("Minesweeper Setup");
         promptFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -52,6 +68,11 @@ public class Main {
         promptFrame.setVisible(true);
     }
 
+    /**
+     * Main method that calls the newGame() method, acting as the entry point to the program.
+     * @param String[] args
+     * @return void
+     */
     public static void main(String[] args){
        Main.newGame(); 
     }

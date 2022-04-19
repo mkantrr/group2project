@@ -191,7 +191,7 @@ public class Game implements ActionListener {
                                     } 
                                     if(gameWon()){
                                         JOptionPane.showConfirmDialog(null, "YOU WIN!",
-                                                "Game Over", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
+                                                "Game Over", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
                                     }
                                 }
                             }

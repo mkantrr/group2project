@@ -1,10 +1,9 @@
 package code;
 
-import javax.swing.*;
+import javax.swing.JToggleButton;
 
 /**
  * @author Zack Burnley, Matt Kanter, Zack Cherry
- * @version 1.0
  * One-way toggle version of JButton. Ensures that a square can only be clicked once
  */
 
