@@ -26,6 +26,22 @@ public class Square {
     }
 
     /**
+     * XIndex getter used to return the integer value of the x-coordinate position of the square.
+     * @return int
+     */
+    public int getXIndex() {
+        return this.xindex;
+    }
+
+    /**
+     * YIndex setter used to return the integer value of the y-coordinate position of the square.
+     * @return int
+     */
+    public int getYIndex() {
+        return this.yindex;
+    }
+
+    /**
      * isMine setter used to set the boolean if the square is a mine or not.
      * @param isMine boolean value to set the instance variable as.
      * @return void
