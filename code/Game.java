@@ -129,7 +129,8 @@ public class Game implements ActionListener {
                         if(SwingUtilities.isRightMouseButton(e)){//right click sets a flag
                             System.out.println("You right-clicked the square at: " + board.getGrid()[ii][jj].getXIndex() + ", "
                                     + board.getGrid()[ii][jj].getYIndex());
-                            if(board.getGrid()[ii][jj].getIsFlag()){
+                            if(!board.getGrid()[ii][jj].getIsFlag() && board.getGrid()[ii][jj].getIsClicked()) {}
+                            else if(board.getGrid()[ii][jj].getIsFlag()) {
                                 board.getGrid()[ii][jj].setIsFlag(false);
                                 buttons[ii][jj].setIcon(tileIcon);
                                 board.getGrid()[ii][jj].setIsClicked(false);
