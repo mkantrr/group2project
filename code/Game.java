@@ -22,6 +22,11 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
+/**
+ * @author Matthew Kanter, Zack Burnley, Zack Cherry
+ * A class to represent the minesweeper game and the backend mechanics of the game, as well as formatting
+ * the GUI to go along with the game.
+ */
 public class Game implements ActionListener {
 
     private static Board board;
@@ -45,6 +50,9 @@ public class Game implements ActionListener {
     static ImageIcon eightIcon = null;
     static ImageIcon flagIcon = null;
 
+    /**
+     * Game constructor used for navigating the class and setting up the window for the game.
+     */
     public Game() {
         board = Board.instance(Main.numRows, Main.numCols, Main.numMines);
         window = new JFrame("Minesweeper");
@@ -61,6 +69,12 @@ public class Game implements ActionListener {
         window.pack();
     }
 
+    /**
+     * A method used to scale the icon images for each square to smooth the board and make it
+     * look nice.
+     * @param String img, which is the image path to the icon file.
+     * @return ImageIcon, the new scaled icon.
+     */
     public ImageIcon getScaledImage(String img) {
         ImageIcon icon = new ImageIcon(img);
         Image image = icon.getImage();
@@ -70,6 +84,11 @@ public class Game implements ActionListener {
         return icon;
     }
 
+    /**
+     * A method used to set each instance variable corresponding to each tile icon to the
+     * scaled icon for each one.
+     * @return void
+     */
     public void loadImages() {
         emptyIcon = getScaledImage("icons/empty.png");
         tileIcon = getScaledImage("icons/t.png");
@@ -85,6 +104,11 @@ public class Game implements ActionListener {
         flagIcon = getScaledImage("icons/flag.png");
     }
 
+    /**
+     * A method used to create the menu bar in the window for the game, and allows the user
+     * to essentially restart the game and setup when clicking the menu item.
+     * @return JMenuBar, the menu bar placed in the windwo.
+     */
     public JMenuBar createMenuBar() {
         JMenuBar bar = new JMenuBar();
         JMenu menu = new JMenu("Game");
@@ -106,6 +130,11 @@ public class Game implements ActionListener {
         return bar;
     }    
 
+    /**
+     * A method used to arrange the buttons required to listen to actions performed on the
+     * tiles by the user, handling clicking tiles, flagging tiles, and win/lose conditions.
+     * @return void
+     */
     public void organizeButtons() {
         buttons = new JToggleButton[board.getDimensionX()][board.getDimensionY()];
         if (minespace != null) {
@@ -208,6 +237,11 @@ public class Game implements ActionListener {
         window.pack();
     } 
 
+    /**
+     * A method used to find the nearby mines of every tile on the board, looping through
+     * each and every tile.
+     * @return void
+     */
     public void formatBoard() {
         for (int i = 0; i < board.getDimensionX(); ++i) {
             for (int j = 0; j < board.getDimensionY(); ++j) {
@@ -216,6 +250,13 @@ public class Game implements ActionListener {
         }
     } 
 
+    /**
+     * A method used to check if the tile at the specified x and y coordinates is a mine
+     * or not. Mostly used in conjunction with finding nearby mines.
+     * @param x int x-coordinate of square.
+     * @param y int y-coordinate of square.
+     * @return boolean if the square is a mine or not.
+     */
     public static boolean lookForMineAt(int x, int y) {
         if(board.getGrid()[x][y].getIsMine() == true) {
             return true;
@@ -224,6 +265,10 @@ public class Game implements ActionListener {
         }
     }
 
+    /**
+     * A method that handles win conditions, is checked every time a square button is clicked.
+     * @return boolean, true if all tiles which are not mines are clicked, otherwise false.
+     */
     public static boolean gameWon() {
         boolean gameWon = true;
         for (int i = 0; i < board.getGrid().length; ++i) {
